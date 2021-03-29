@@ -20,18 +20,24 @@ class App extends Component {
     e.preventDefault();
     this.setState((preState) => ({
       taskList: [...preState.taskList, preState.task],
+      task: "",
     }));
   }
 
   render() {
-    const { taskList } = this.state;
+    const { taskList, task } = this.state;
     return (
       <>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChange} />
-          <input type="submit" value="Submit" />
+          <input
+            type="text"
+            value={task}
+            onChange={this.handleChange}
+            required
+          />
+          <button type="submit">Add task</button>
         </form>
-        <Overview newTask={taskList} />
+        <Overview taskList={taskList} />
       </>
     );
   }
