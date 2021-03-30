@@ -11,12 +11,12 @@
 body {
   background-color: tomato;
   font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   text-align: center;
-  width: 20rem;
-  margin: 0 auto;
   h1 {
     margin: 1rem 0;
   }
@@ -24,7 +24,7 @@ body {
 
 form {
   display: flex;
-  width: 15rem;
+  // width: 15rem;
   justify-content: space-between;
   margin: 0 auto;
   border: 2px solid #fad586;
@@ -37,8 +37,8 @@ form {
     padding: 0;
     background: none;
     .add-icon {
-      width: 2rem;
-      height: 2rem;
+      width: 1.8rem;
+      height: 1.8rem;
       vertical-align: middle;
       color: #1b2021;
     }
@@ -55,7 +55,6 @@ form {
   user-select: none;
   margin-top: 3rem;
   border-radius: 10px;
-  width: 80%;
   margin: 2rem auto;
   li {
     display: flex;
