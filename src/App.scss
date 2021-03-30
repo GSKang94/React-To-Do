@@ -1,5 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: tomato;
+  font-family: "Nunito", sans-serif;
+}
+
+.container {
+  text-align: center;
+  width: 20rem;
+  margin: 0 auto;
+  h1 {
+    margin: 1rem 0;
+  }
 }
 
 form {
@@ -13,23 +33,41 @@ form {
     border: none;
     outline: none;
   }
-}
-button {
-  padding: 0;
-  background: none;
-}
-.add-icon {
-  width: 2rem;
-  height: 2rem;
-  vertical-align: middle;
-  color: #1b2021;
+  button {
+    padding: 0;
+    background: none;
+    .add-icon {
+      width: 2rem;
+      height: 2rem;
+      vertical-align: middle;
+      color: #1b2021;
+    }
+  }
+  input {
+    background-color: #1b2021;
+    color: #fad586;
+    font-weight: bold;
+    padding-left: 0.5rem;
+  }
 }
 
-input {
-  background-color: #1b2021;
-  color: #fad586;
-}
-
-ol {
+.overview {
   user-select: none;
+  margin-top: 3rem;
+  border-radius: 10px;
+  width: 80%;
+  margin: 2rem auto;
+  li {
+    display: flex;
+    padding: 0.6rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(250, 213, 134, 0.8);
+    &:nth-child(2n) {
+      background: #fad586;
+    }
+    .remove-btn {
+      color: brown;
+    }
+  }
 }

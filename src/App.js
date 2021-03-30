@@ -38,7 +38,8 @@ class App extends Component {
   render() {
     const { taskList, task } = this.state;
     return (
-      <>
+      <div className="container">
+        <h1>To-Do List</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -51,7 +52,7 @@ class App extends Component {
           </button>
         </form>
         <Overview taskList={taskList} deleteTask={this.handleDelete} />
-      </>
+      </div>
     );
   }
 }
