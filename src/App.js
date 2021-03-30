@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Overview from "./Components/Overview";
+import "./App.scss";
+import { MdAddBox } from "react-icons/md";
 
 class App extends Component {
   constructor() {
@@ -7,9 +9,11 @@ class App extends Component {
     this.state = {
       task: "",
       taskList: [],
+      taskNumber: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   handleChange(e) {
     this.setState({
@@ -23,6 +27,13 @@ class App extends Component {
       task: "",
     }));
   }
+  handleDelete(e) {
+    let newList = [...this.state.taskList];
+    newList.splice(e.target.id, 1);
+    this.setState({
+      taskList: newList,
+    });
+  }
 
   render() {
     const { taskList, task } = this.state;
@@ -35,9 +46,11 @@ class App extends Component {
             onChange={this.handleChange}
             required
           />
-          <button type="submit">Add task</button>
+          <button type="submit">
+            <MdAddBox className="add-icon" />
+          </button>
         </form>
-        <Overview taskList={taskList} />
+        <Overview taskList={taskList} deleteTask={this.handleDelete} />
       </>
     );
   }

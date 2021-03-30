@@ -1,0 +1,35 @@
+body {
+  background-color: tomato;
+}
+
+form {
+  display: flex;
+  width: 15rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  border: 2px solid #fad586;
+  input,
+  button {
+    border: none;
+    outline: none;
+  }
+}
+button {
+  padding: 0;
+  background: none;
+}
+.add-icon {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  color: #1b2021;
+}
+
+input {
+  background-color: #1b2021;
+  color: #fad586;
+}
+
+ol {
+  user-select: none;
+}

@@ -1,8 +1,14 @@
-function Overview({ taskList }) {
+import uniqid from "uniqid";
+import { VscDiffRemoved } from "react-icons/vsc";
+
+function Overview({ taskList, deleteTask }) {
   return (
     <ol>
       {taskList.map((task, i) => (
-        <li key={i}>{task}</li>
+        <li key={uniqid()}>
+          {task}
+          <VscDiffRemoved id={i} onClick={deleteTask} />
+        </li>
       ))}
     </ol>
   );
