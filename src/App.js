@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Overview from "./Components/Overview";
+import ToDoList from "./Components/ToDoList";
 import "./App.scss";
 import { MdAddBox } from "react-icons/md";
 
@@ -10,7 +10,6 @@ class App extends Component {
       task: "",
       taskList: ["Buy milk", "Do exercise", "Walk dog"],
       taskNumber: 0,
-      taskDeleted: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,12 +32,11 @@ class App extends Component {
     newList.splice(e.target.id, 1);
     this.setState({
       taskList: newList,
-      taskDeleted: true,
     });
   }
 
   render() {
-    const { taskList, task, taskDeleted } = this.state;
+    const { taskList, task } = this.state;
     return (
       <div className="container">
         <h1>To-Do List</h1>
@@ -53,11 +51,7 @@ class App extends Component {
             <MdAddBox className="add-icon" />
           </button>
         </form>
-        <Overview
-          taskDeleted={taskDeleted}
-          taskList={taskList}
-          deleteTask={this.handleDelete}
-        />
+        <ToDoList taskList={taskList} deleteTask={this.handleDelete} />
       </div>
     );
   }
