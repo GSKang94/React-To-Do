@@ -8,8 +8,7 @@ class App extends Component {
     super();
     this.state = {
       task: "",
-      taskList: ["Buy milk", "Do exercise", "Walk dog"],
-      taskNumber: 0,
+      taskList: ["Buy milk", "Walk dog"],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
