@@ -60,12 +60,16 @@ form {
     padding: 0.6rem;
     justify-content: space-between;
     align-items: center;
+    outline: none;
     background-color: rgba(250, 213, 134, 0.8);
     &:nth-child(2n) {
       background: #fad586;
     }
     .remove-btn {
       color: brown;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

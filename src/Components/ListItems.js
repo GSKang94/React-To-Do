@@ -2,7 +2,7 @@ import { VscDiffRemoved } from "react-icons/vsc";
 
 const ListItems = ({ task, deleteTask, index }) => {
   return (
-    <li className="bounceInUp">
+    <li className="bounceInUp" contentEditable="true">
       {task}
       <VscDiffRemoved
         id={index} //TO make splice work
